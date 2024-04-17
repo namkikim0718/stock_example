@@ -9,7 +9,7 @@
     4. [Named Lock](#4-Named-Lock)
     5. [Lettuce](#5-Lettuce)
     6. [Redisson](#6-Redisson)
-
+5. [MySQL vs Redis](#MySQL-vs-Redis)
 </br>
 
 ## 개발 환경
@@ -130,6 +130,8 @@ implementation 'org.redisson:redisson-spring-boot-starter:3.27.2'
   - spin lock 방ㅇ식이므로 lock이 해제 되었는지 주기적으로 재시도를 하면서 부하가 커질 수 있음
   - 분산 락 기능을 제공하지 않다 직접 구현해야함
 
+</br>
+
 ### 6. Redisson
 - 장점
   - 분산 락 기능을 제공해 별도의 구현이 필요없음
@@ -139,3 +141,17 @@ implementation 'org.redisson:redisson-spring-boot-starter:3.27.2'
   - lock을 별도의 라이브러리에서 제공해주므로 사용법을 공부해야함
 > 실무에서는 재시도가 필요하지 않은 lock은 `lettuce` 활용  
 > 재시도가 필요한 경우에 `redisson` 활용
+
+</br>
+
+## MySQL vs Redis
+- MySQL
+  - MySQL만 있다면 별도의 비용없이 사용 가능
+  - 트래픽이 아주 많은 것이 아니라면 MySQL로도 문제없이 활용 가능
+  - 그러나 Redis 보다 성능은 좋지 않음
+
+</br>
+
+- Redis
+  - 이미 사용중인 Redis가 존재하지 않으면 별도의 구축 비용과 인프라 관리비용이 발생
+  - 트래픽이 많은 서비스일수록 MySQL보다 성능이 좋음
