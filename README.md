@@ -4,3 +4,9 @@
 - 확인해보니 공통 자원을 병행하여 읽거나 쓰는 작업을 하면서 생기는 `Race Condition`이 원인임을 발견
   - [Race Condition이란?](https://iredays.tistory.com/125)
 - 그렇다면 이 문제를 어떤 방식으로 해결할 수 있을까?
+
+
+## 해결 방법
+#### 1. Java의 synchronized를 이용한 방법
+- 메서드 반환 타입 앞에 `synchronized`를 추가 -> `@Transactional`을 없애야만 정상적으로 동작
+- 한계점 : 서버가 1개라면 잘 동작하지만, 서버가 2개 이상이라면 각각의 서버에서 동시에 접근하면 또다시 `Race Condition` 발생
