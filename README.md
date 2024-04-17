@@ -1,10 +1,21 @@
+## 목차
+
+3. [문제상황](문제-상황)
+4. [해결방법](해결-방법)
+    1. [Java synchronized](Java의-synchronized를-이용한-방법)
+    2. [Pessimistic Lock](Pessimistic-Lock(비관적-락))
+    3. [Optimistic Lock](Optimistic-Lock(낙관적-락))
+    4. [Named Lock](Named-Lock)
+    5. [Lettuce](Lettuce)
+    6. [Redisson](Redisson)
+
 ## 문제 상황
 - 우선, 기존에는 재고를 감소하는데 항상 1개의 요청씩만 들어온다는 가정하에 코드를 작성
 - 동시에 100개의 요청이 들어오게 되면 어떻게 동작할 지 테스트 코드로 구현해봤으나, 100개의 요청이 전부 실행되는 것이 아니라 누락이 발생하는 것을 확인
 - 확인해보니 공통 자원을 병행하여 읽거나 쓰는 작업을 하면서 생기는 `Race Condition`이 원인임을 발견
   - [Race Condition이란?](https://iredays.tistory.com/125)
 - 그렇다면 이 문제를 어떤 방식으로 해결할 수 있을까?
-
+</br>
 
 ## 해결 방법
 ### 1. Java의 synchronized를 이용한 방법
