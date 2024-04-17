@@ -10,6 +10,8 @@
     5. [Lettuce](#5-Lettuce)
     6. [Redisson](#6-Redisson)
 
+</br>
+
 ## 개발 환경
 - 기본 환경
   - IDE: IntelliJ IDEA
@@ -24,6 +26,8 @@
   - MySQL
   - Gradle
   - Junit5
+ 
+</br>
  
 ## 작업 환경 세팅
 - Docker 설치</br>
@@ -107,6 +111,7 @@ implementation 'org.redisson:redisson-spring-boot-starter:3.27.2'
 
 ![비관적 락 vs 낙관적 락](https://github.com/namkikim0718/stock_example/assets/113903598/63555d40-c56b-420e-90e7-d5f3df0ed8d3)
 
+</br>
   
 ### 4. Named Lock 
 - 장점
