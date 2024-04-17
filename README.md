@@ -1,13 +1,79 @@
 ## 목차
-
-3. [문제상황](#문제-상황)
-4. [해결방법](#해결-방법)
+1. [개발 환경](#개발-환경)
+2. [작업 환경 세팅](#작업-환경-세팅)
+3. [문제 상황](#문제-상황)
+4. [해결 방법](#해결-방법)
     1. [Java synchronized](#1-Java의-synchronized를-이용한-방법)
     2. [Pessimistic Lock](#2-Pessimistic-Lock(비관적-락))
     3. [Optimistic Lock](#3-Optimistic-Lock(낙관적-락))
     4. [Named Lock](#4-Named-Lock)
     5. [Lettuce](#5-Lettuce)
     6. [Redisson](#6-Redisson)
+
+## 개발 환경
+- 기본 환경
+  - IDE: IntelliJ IDEA
+  - OS: Mac OS Sonoma
+  - Git
+- Server
+  - Java17
+  - Spring Boot 3.2.4
+  - JPA
+  - Docker
+  - Redis
+  - MySQL
+  - Gradle
+  - Junit5
+ 
+## 작업 환경 세팅
+- Docker 설치</br>
+```
+brew install docker
+brew link docker
+docker version
+```
+</br>
+
+- MySQL 설치 및 실행
+```
+docker pull mysql
+docker run -d -p 3307:3306 -e MYSQL_ROOT_PASSWORD=1234 --name mysql mysql
+docker ps
+```
+> port가 겹쳐서 3307로 설정(겹치지 않으면 3306:3306 으로 해도 무방)
+
+</br>
+
+- MySQL 데이터베이스 생성
+```
+docker exec -it mysql bash
+mysql -u root -p
+create database stock_example;
+use stock_example;
+```
+
+</br>
+
+- Redis 설치 및 실행
+```
+docker pull redis
+docker run --name myredis -d -p 6379:6379 redis
+```
+</br>
+
+- Redis 의존성 추가
+```
+implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+```
+</br>
+
+- redisson 의존성 추가
+```
+implementation 'org.redisson:redisson-spring-boot-starter:3.27.2'
+```
+> Maven Repository에서 redisson 검색 후 최신 버전으로 주입
+
+</br>
 
 ## 문제 상황
 - 우선, 기존에는 재고를 감소하는데 항상 1개의 요청씩만 들어온다는 가정하에 코드를 작성
