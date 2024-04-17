@@ -1,13 +1,13 @@
 ## 목차
 
-3. [문제상황](문제-상황)
-4. [해결방법](해결-방법)
-    1. [Java synchronized](Java의-synchronized를-이용한-방법)
-    2. [Pessimistic Lock](Pessimistic-Lock(비관적-락))
-    3. [Optimistic Lock](Optimistic-Lock(낙관적-락))
-    4. [Named Lock](Named-Lock)
-    5. [Lettuce](Lettuce)
-    6. [Redisson](Redisson)
+3. [문제상황](#문제-상황)
+4. [해결방법](#해결-방법)
+    1. [Java synchronized](#Java의-synchronized를-이용한-방법)
+    2. [Pessimistic Lock](#Pessimistic-Lock(비관적-락))
+    3. [Optimistic Lock](#Optimistic-Lock(낙관적-락))
+    4. [Named Lock](#Named-Lock)
+    5. [Lettuce](#Lettuce)
+    6. [Redisson](#Redisson)
 
 ## 문제 상황
 - 우선, 기존에는 재고를 감소하는데 항상 1개의 요청씩만 들어온다는 가정하에 코드를 작성
