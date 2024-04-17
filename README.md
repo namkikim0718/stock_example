@@ -10,3 +10,11 @@
 #### 1. Java의 synchronized를 이용한 방법
 - 메서드 반환 타입 앞에 `synchronized`를 추가 -> `@Transactional`을 없애야만 정상적으로 동작
 - 한계점 : 서버가 1개라면 잘 동작하지만, 서버가 2개 이상이라면 각각의 서버에서 동시에 접근하면 또다시 `Race Condition` 발생
+
+
+#### 2. DB Lock을 이용한 방법
+1. Pessimistic Lock(비관적 락)
+- 트랜잭션끼리의 충돌이 발생한다고 가정하고 우선 락을 거는 방법
+- 해당 트랜잭션이 종료되기 전에 다른 트랜잭션에서는 해당 row를 업데이트 할 수 없음
+2. Optimistic Lock(낙관적 락)
+3. 
