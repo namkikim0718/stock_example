@@ -127,7 +127,7 @@ implementation 'org.redisson:redisson-spring-boot-starter:3.27.2'
 - 장점
   - spring data redis를 사용하면 lettuce가 기본이므로 별도의 라이브러리 사용하지 않고 간단하게 구현 가능
 - 단점
-  - spin lock 방ㅇ식이므로 lock이 해제 되었는지 주기적으로 재시도를 하면서 부하가 커질 수 있음
+  - spin lock 방식이므로 lock이 해제 되었는지 주기적으로 재시도를 하면서 부하가 커질 수 있음
   - 분산 락 기능을 제공하지 않다 직접 구현해야함
 
 </br>
