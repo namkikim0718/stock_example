@@ -1,0 +1,1 @@
+insert into stock(product_id, quantity, version) values (1, 1000000, 3000);

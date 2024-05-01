@@ -4,9 +4,10 @@ import com.example.stock.repository.LockRepository;
 import com.example.stock.service.StockService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-@Component
+@Service
 @RequiredArgsConstructor
 public class NamedLockStockFacade {
 

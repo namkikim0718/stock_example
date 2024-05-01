@@ -4,8 +4,9 @@ import com.example.stock.repository.RedisLockRepository;
 import com.example.stock.service.StockService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 @RequiredArgsConstructor
 public class LettuceLockStockFacade {
 

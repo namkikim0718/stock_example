@@ -1,7 +1,9 @@
 package com.example.stock.controller;
 
 import com.example.stock.facade.*;
+import com.example.stock.service.PessimisticLockStockService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,12 +18,20 @@ public class StockController {
     private final LettuceLockStockFacade lettuceLockStockFacade;
     private final RedissonLockStockFacade redissonLockStockFacade;
 
+    private final PessimisticLockStockService pessimisticLockStockService;
+
+    @GetMapping("/")
+    public String test() {
+        return "test";
+    }
+
     /**
      *  Pessimistic Lock
      */
     @PostMapping("/pessimisticLock/{id}")
     public String pessimisticLock(@PathVariable("id") Long id) throws InterruptedException {
-        pessimisticLockStockFacade.decrease(id, 1L);
+//        pessimisticLockStockFacade.decrease(id, 1L);
+        pessimisticLockStockService.decrease(id, 1L);
         return "pessimisticLock";
     }
 
