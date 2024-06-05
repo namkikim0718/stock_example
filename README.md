@@ -155,3 +155,25 @@ implementation 'org.redisson:redisson-spring-boot-starter:3.27.2'
 - Redis
   - 이미 사용중인 Redis가 존재하지 않으면 별도의 구축 비용과 인프라 관리비용이 발생
   - 트래픽이 많은 서비스일수록 MySQL보다 성능이 좋음
+
+</br>
+
+## k6를 이용한 테스트
+- 비관적 락
+<img width="956" alt="스크린샷 2024-06-03 09 39 45" src="https://github.com/namkikim0718/stock_example/assets/113903598/310d482c-bddc-41fb-bb63-060e42634495">
+
+- 낙관적 락 
+<img width="906" alt="스크린샷 2024-06-03 09 42 26" src="https://github.com/namkikim0718/stock_example/assets/113903598/d67c56b7-02bd-4035-acbf-fa2232e58137">
+
+
+- 네임드 락
+<img width="907" alt="스크린샷 2024-06-03 09 43 27" src="https://github.com/namkikim0718/stock_example/assets/113903598/5440d9d4-045e-4a27-a456-a70edd1bd1e3">
+
+
+- lettuce
+<img width="922" alt="스크린샷 2024-06-03 09 44 48" src="https://github.com/namkikim0718/stock_example/assets/113903598/588dc5dc-56dd-4b83-80e3-06e080ab79a2">
+
+
+- redisson
+<img width="924" alt="스크린샷 2024-06-03 09 46 00" src="https://github.com/namkikim0718/stock_example/assets/113903598/eba4da9c-1edd-4a40-bddd-c6bd132367d9">
+
